@@ -19,6 +19,10 @@ public class OppositeEnds {
             elements or iterating out of bounds
          */
         while(l < r) {
+            /*
+                Inner loop conditions also l < r so pointers don't cross and read past
+                the string
+             */
             while(l < r && !Character.isLetterOrDigit(s.charAt(l))) l++; // skip non alphanumeric characters heading to the right
             while(l < r && !Character.isLetterOrDigit(s.charAt(r))) r--; // skip non alphanumeric characters heading to the left
             
