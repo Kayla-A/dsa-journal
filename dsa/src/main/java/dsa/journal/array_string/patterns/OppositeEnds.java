@@ -2,7 +2,12 @@ package dsa.journal.array_string.patterns;
 
 public class OppositeEnds {
     /*
-        Algorithm that processes only the alphanumeric characters in a string
+        Pattern:
+            Two pointers start at both ends and move toward each other
+        
+        Trigger: 
+            symmetric problem
+            sorted order determines which pointer to move
      */
     public static void main(String[] args) {
         String s = "!Kay!*la0)"; // string to use in algorithm

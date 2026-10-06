@@ -2,9 +2,18 @@ package dsa.journal.array_string.patterns;
 
 import java.util.Arrays;
 
-public class ReverseArray {
+public class Reverse {
     /* 
-        Algorithms to reverse the order of elements in an array.
+        Pattern:
+            Two pointers start at opposite ends and conduct an 
+            in place swap.
+        
+        Trigger:
+            in place
+            O(1) space
+            reverse
+            mirror
+
      */
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4}; // the array to reverse
