@@ -1,4 +1,4 @@
-package dsa.journal.array_string;
+package dsa.journal.array_string.patterns;
 
 import java.util.Arrays;
 
@@ -28,6 +28,7 @@ public class ReverseArray {
         } // while
 
         System.out.println(Arrays.toString(arr));
+
     } // main
 
 } // ReverseArray
