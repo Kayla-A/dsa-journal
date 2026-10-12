@@ -6,5 +6,6 @@
     },
     "editor.suggestOnTriggerCharacters": false,
     "editor.wordBasedSuggestions": "off",
-    "editor.acceptSuggestionOnEnter": "off"
+    "editor.acceptSuggestionOnEnter": "off",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
