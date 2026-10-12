@@ -37,7 +37,7 @@ public class KadanesAlgorithm {
             the previous subarray, or start fresh here. Starting fresh wins when 
             the running sum has gone negative, since a negative prefix only hurts.
          */
-        for(int i = 0; i < nums.length; i++) {
+        for(int i = 1; i < nums.length; i++) {
             cur = Math.max(nums[i], cur + nums[i]); // extend or restart
             best = Math.max(best, cur);
         } // for
