@@ -129,31 +129,38 @@ public class MyHashSetTest {
         assertEquals(true, set.add(1));
         assertEquals(1, set.size());
         assertEquals(true, set.contains(1));
+        assertEquals(1, set.bucketLength(1));
 
         // add 17
         assertEquals(true, set.add(17));
         assertEquals(2, set.size());
         assertEquals(true, set.contains(17));
+        assertEquals(2, set.bucketLength(1));
 
         // add 33
         assertEquals(true, set.add(33));
         assertEquals(3, set.size());
         assertEquals(true, set.contains(33));
+        assertEquals(3, set.bucketLength(1));
 
         // add -31
         assertEquals(true, set.add(-31));
         assertEquals(4, set.size());
         assertEquals(true, set.contains(-31));
+        assertEquals(1, set.bucketLength(15));
 
-        // ad -15
+        // add -15
         assertEquals(true, set.add(-15));
         assertEquals(5, set.size());
         assertEquals(true, set.contains(-15));
+        assertEquals(2, set.bucketLength(15));
 
         // add duplicate
         assertEquals(false, set.add(1));
-        assertEquals(3, set.size());
+        assertEquals(5, set.size());
         assertEquals(true, set.contains(1));
+        assertEquals(3, set.bucketLength(1));
+        set.printSet();
 
         // remove 17
         assertEquals(true, set.remove(17));
@@ -161,12 +168,14 @@ public class MyHashSetTest {
         assertEquals(false, set.contains(17));
         assertEquals(true, set.contains(1));
         assertEquals(true, set.contains(33));
+        assertEquals(2, set.bucketLength(1));
 
         // remove 33
         assertEquals(true, set.remove(33));
         assertEquals(3, set.size());
         assertEquals(false, set.contains(33));
         assertEquals(true, set.contains(1));
+        assertEquals(1, set.bucketLength(1));
 
         // remove -15
         assertEquals(true, set.remove(-15));
@@ -174,18 +183,57 @@ public class MyHashSetTest {
         assertEquals(false, set.contains(-15));
         assertEquals(true, set.contains(-31));
         assertEquals(true, set.contains(1));
+        assertEquals(1, set.bucketLength(15));
 
         // remove -31
         assertEquals(true, set.remove(-31));
         assertEquals(1, set.size());
         assertEquals(false, set.contains(-31));
         assertEquals(true, set.contains(1));
+        assertEquals(0, set.bucketLength(15));
 
         // remove 1
         assertEquals(true, set.remove(1));
         assertEquals(0, set.size());
         assertEquals(false, set.contains(1));
+        assertEquals(0, set.bucketLength(1));
+        set.printSet();
         
-    } // private
-    
+    } // forcedCollision
+
+    @Test 
+    @DisplayName("Check bucket 0 collision")
+    void bucketZeroForcedCollision() {
+        // -32, -16, 0, 16, 32
+        // add -32
+        assertEquals(true, set.add(-32));
+        assertEquals(1, set.size());
+        assertEquals(true, set.contains(-32));
+        assertEquals(1, set.bucketLength(0));
+
+        // add -16
+        assertEquals(true, set.add(-16));
+        assertEquals(2, set.size());
+        assertEquals(true, set.contains(-16));
+        assertEquals(2, set.bucketLength(0));
+
+        // add 0
+        assertEquals(true, set.add(0));
+        assertEquals(3, set.size());
+        assertEquals(true, set.contains(0));
+        assertEquals(3, set.bucketLength(0));
+
+        // add 16
+        assertEquals(true, set.add(16));
+        assertEquals(4, set.size());
+        assertEquals(true, set.contains(16));
+        assertEquals(4, set.bucketLength(0));
+
+        // add 32
+        assertEquals(true, set.add(32));
+        assertEquals(5, set.size());
+        assertEquals(true, set.contains(32));
+        assertEquals(5, set.bucketLength(0));
+    } // bucketZeroForcedCollision
+
 } // MyHashSetTest
