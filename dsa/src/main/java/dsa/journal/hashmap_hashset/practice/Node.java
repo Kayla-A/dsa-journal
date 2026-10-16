@@ -2,8 +2,8 @@ package dsa.journal.hashmap_hashset.practice;
 
 public class Node {
 
-    private Integer value;
-    private Node nextNode;
+    Integer value;
+    Node nextNode;
     
     public Node() {
         this.value = null;
