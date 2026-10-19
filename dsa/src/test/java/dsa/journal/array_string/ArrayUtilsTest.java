@@ -6,8 +6,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import dsa.journal.array_string.patterns.ArrayUtils;
-
 public class ArrayUtilsTest {
     
     @BeforeEach

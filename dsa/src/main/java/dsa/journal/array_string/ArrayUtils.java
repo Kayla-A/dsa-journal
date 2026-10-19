@@ -1,6 +1,4 @@
-package dsa.journal.array_string.patterns;
-
-import java.util.Arrays;
+package dsa.journal.array_string;
 
 public class ArrayUtils {
     
