@@ -5,7 +5,7 @@ import dsa.journal.lists_stacks_queues.practice.ListNode;
 public class DummyHead {
     /*
         Pattern
-            put a fake node in front of the real head so the head gets no special case
+            put a fake node (sentinal node) in front of the real head so the head gets no special case
             then look one node ahead (curr.next)
 
         Time Complexity
