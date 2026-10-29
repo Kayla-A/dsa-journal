@@ -35,6 +35,19 @@ public class BinarySearch {
 
         return -1;
     } // binarySearch
+
+    private static int firstBadVersion(int n, int bad) {
+        int low = 0, high = n;
+
+        while(low < high) {
+            int mid = low + (high - low) / 2;
+            if(mid == bad) high = mid;
+            else low = mid + 1;
+        } // while
+
+        return high;
+    } // firstBadVersion
+
     public static void main(String[] args) {
         int[] nums = {1, 2, 5, 7, 10, 20, 23, 25, 330};
 
