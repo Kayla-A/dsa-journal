@@ -1,4 +1,4 @@
-package dsa.journal.trees;
+package dsa.journal.trees.patterns;
 
 public class BinarySearchTree {
     /*

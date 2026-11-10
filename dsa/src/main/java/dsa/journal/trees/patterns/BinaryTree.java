@@ -1,4 +1,4 @@
-package dsa.journal.trees;
+package dsa.journal.trees.patterns;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
