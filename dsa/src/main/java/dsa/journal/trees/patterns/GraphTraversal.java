@@ -64,7 +64,7 @@ public class GraphTraversal {
         Queue<Integer> q = new ArrayDeque<>();
         visited = new boolean[n];
         q.add(start); 
-        visited[start] = true; // mark BEFORE / WHEN adding
+        visited[start] = true; // mark BEFORE or WHEN adding
         while (!q.isEmpty()) {
             int cur = q.poll();
             for (int next : adj.get(cur)) {
